@@ -88,7 +88,7 @@ def str_to_int(s):
 def date_to_int(da):
     return str_to_int(date_to_str(da))
 
-def is_trading_day(dt: datetime.datetime):
+def is_trading_day(dt):
     if type(dt) is datetime.datetime:
         dt = dt.date()
 
@@ -100,7 +100,7 @@ def is_trading_day(dt: datetime.datetime):
             return False
     return True
 
-def previous_trading_day(dt: datetime.datetime):
+def previous_trading_day(dt):
     if type(dt) is datetime.datetime:
         dt = dt.date()
 
@@ -109,7 +109,7 @@ def previous_trading_day(dt: datetime.datetime):
         if is_trading_day(dt):
             return dt
 
-def next_trading_day(dt: datetime.datetime):
+def next_trading_day(dt):
     if type(dt) is datetime.datetime:
         dt = dt.date()
 
@@ -120,7 +120,6 @@ def next_trading_day(dt: datetime.datetime):
 
 
 def trading_days_between(start, end):
-    # 为了更快的遍历，我们使用 set 结构
     if type(start) is datetime.datetime:
         start = start.date()
 
